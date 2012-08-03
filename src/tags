@@ -1,0 +1,64 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ConfigTab	gui_tab_config.rb	/^class ConfigTab < Qt::Widget$/;"	c
+DrawTab	gui_tab_draw.rb	/^class DrawTab < Qt::Widget$/;"	c
+GrabBag	grab_bag.rb	/^class GrabBag$/;"	c
+GrabBagDatabase	grabbag_database.rb	/^class GrabBagDatabase$/;"	c
+GrabBagGUI	grabbag_gui.rb	/^class GrabBagGUI < Qt::Widget$/;"	c
+NPCLookupTab	gui_tab_npc_lookup.rb	/^class NPCLookupTab < Qt::Widget$/;"	c
+RecordsTab	gui_tab_records.rb	/^class RecordsTab < Qt::Widget$/;"	c
+TestConfig	gui_tab_config.rb	/^	class TestConfig < Qt::Widget$/;"	c
+TestDatabase	gui_tab_records.rb	/^	class TestDatabase$/;"	c
+TestFrame	test_gb.rb	/^class TestFrame < Qt::Widget$/;"	c
+TestRecords	gui_tab_records.rb	/^	class TestRecords < Qt::Widget$/;"	c
+add_or_update_npc	grabbag_database.rb	/^	def add_or_update_npc(name,chapter,email)$/;"	f	class:GrabBagDatabase
+build_bag	grabbag_database.rb	/^	def build_bag gen_file, event, min_draws$/;"	f	class:GrabBagDatabase
+do_stuff	test_gb.rb	/^	def do_stuff$/;"	f	class:TestFrame
+draw	grab_bag.rb	/^	def draw num = 1$/;"	f	class:GrabBag
+draw	grabbag_database.rb	/^	def draw npc_name, event, num_of_draws = 1$/;"	f	class:GrabBagDatabase
+draw	gui_tab_draw.rb	/^	def draw(npc_name, num_of_draws)$/;"	f	class:DrawTab
+event_name	gui_tab_config.rb	/^		def event_name$/;"	f	class:TestConfig
+gen_file	gui_tab_config.rb	/^		def gen_file$/;"	f	class:TestConfig
+generate_new_grabbag	grabbag_gui.rb	/^	def generate_new_grabbag$/;"	f	class:GrabBagGUI
+generate_new_grabbag	gui_tab_config.rb	/^		def generate_new_grabbag$/;"	f	class:TestConfig
+get_npc_list	grabbag_database.rb	/^	def get_npc_list$/;"	f	class:GrabBagDatabase
+get_npc_list	gui_tab_records.rb	/^		def get_npc_list$/;"	f	class:TestDatabase
+get_npc_list	gui_tab_records.rb	/^	def get_npc_list$/;"	f	class:RecordsTab
+initialize	grab_bag.rb	/^	def initialize options$/;"	f	class:GrabBag
+initialize	grabbag_database.rb	/^	def initialize(filename = "gb.db")$/;"	f	class:GrabBagDatabase
+initialize	grabbag_gui.rb	/^	def initialize$/;"	f	class:GrabBagGUI
+initialize	gui_tab_config.rb	/^		def initialize$/;"	f	class:TestConfig
+initialize	gui_tab_config.rb	/^	def initialize(parent=nil)$/;"	f	class:ConfigTab
+initialize	gui_tab_draw.rb	/^	def initialize parent=nil$/;"	f	class:DrawTab
+initialize	gui_tab_npc_lookup.rb	/^	def initialize(parent)$/;"	f	class:NPCLookupTab
+initialize	gui_tab_records.rb	/^		def initialize$/;"	f	class:TestRecords
+initialize	gui_tab_records.rb	/^	def initialize(parent=nil)$/;"	f	class:RecordsTab
+initialize	test_gb.rb	/^	def initialize(parent=nil)$/;"	f	class:TestFrame
+initialize_bag	grabbag_database.rb	/^	def initialize_bag gen_file, event, min_draws$/;"	f	class:GrabBagDatabase
+initialize_database	grabbag_database.rb	/^	def initialize_database$/;"	f	class:GrabBagDatabase
+lookup_log_for_event	grabbag_database.rb	/^	def lookup_log_for_event(event)$/;"	f	class:GrabBagDatabase
+lookup_log_for_npc	grabbag_database.rb	/^	def lookup_log_for_npc(name)$/;"	f	class:GrabBagDatabase
+lookup_npc_chapter	grabbag_database.rb	/^	def lookup_npc_chapter(name)$/;"	f	class:GrabBagDatabase
+lookup_npc_draws	grabbag_database.rb	/^	def lookup_npc_draws(name, event = nil)$/;"	f	class:GrabBagDatabase
+lookup_npc_email	grabbag_database.rb	/^	def lookup_npc_email(name)$/;"	f	class:GrabBagDatabase
+lookup_npc_tagids	grabbag_database.rb	/^	def lookup_npc_tagids(name, spent)$/;"	f	class:GrabBagDatabase
+lookup_npc_tags	grabbag_database.rb	/^	def lookup_npc_tags(name, spent = false)$/;"	f	class:GrabBagDatabase
+max_draws	gui_tab_config.rb	/^		def max_draws$/;"	f	class:TestConfig
+npc_count	gui_tab_config.rb	/^		def npc_count$/;"	f	class:TestConfig
+npc_name	gui_tab_records.rb	/^	def npc_name$/;"	f	class:RecordsTab
+spend	gui_tab_records.rb	/^	def spend$/;"	f	class:RecordsTab
+spend_nth_tag	grabbag_database.rb	/^	def spend_nth_tag(name,index)$/;"	f	class:GrabBagDatabase
+test	testgbdb.rb	/^	def test$/;"	f
+transfer	gui_tab_records.rb	/^	def transfer$/;"	f	class:RecordsTab
+unspend	gui_tab_records.rb	/^	def unspend$/;"	f	class:RecordsTab
+unspend_nth_tag	grabbag_database.rb	/^	def unspend_nth_tag(name,index)$/;"	f	class:GrabBagDatabase
+update	grabbag_gui.rb	/^	def update$/;"	f	class:GrabBagGUI
+update	gui_tab_config.rb	/^	def update$/;"	f	class:ConfigTab
+update	gui_tab_draw.rb	/^	def update$/;"	f	class:DrawTab
+update	gui_tab_npc_lookup.rb	/^	def update$/;"	f	class:NPCLookupTab
+update	gui_tab_records.rb	/^	def update$/;"	f	class:RecordsTab
+update_bag	grabbag_database.rb	/^	def update_bag(gen_file, event, min_draws)$/;"	f	class:GrabBagDatabase

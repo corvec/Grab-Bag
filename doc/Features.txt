@@ -1,0 +1,6 @@
+Grab Bag Tag Program:
+---------------------
+1. GUI Interface
+2. Record draws
+3. Allow users to transfer draws
+4. Preview grab bag with a given number of PCs/NPCs
