@@ -1,3 +1,5 @@
+require_relative "gui_email"
+
 class DrawTab < Qt::Widget
 	def initialize(parent, database)
 		super(parent)
@@ -15,6 +17,7 @@ class DrawTab < Qt::Widget
 		@button_draw_once = Qt::PushButton.new("Draw Once", self)
 		@button_draw_x = Qt::PushButton.new("Draw", self)
 		@button_copy = Qt::PushButton.new("Copy to Clipboard",self)
+		@button_email = Qt::PushButton.new("Email Draws",self)
 		@x_to_draw = Qt::LineEdit.new("4",self)
 		@list_of_draws = Qt::ListWidget.new(self)
 		@log_widget = Qt::TextEdit.new(self)
@@ -35,6 +38,10 @@ class DrawTab < Qt::Widget
 
 		@button_copy.connect(SIGNAL(:clicked)) {
 			Qt::Application.clipboard.set_text(@database.lookup_npc_draws(@npc_name.current_text).join("\r"))
+		}
+
+		@button_email.connect(SIGNAL(:clicked)) {
+			self.email
 		}
 
 		@npc_name.connect(SIGNAL('currentIndexChanged(int)')) {
@@ -71,6 +78,7 @@ class DrawTab < Qt::Widget
 		@layout.add_widget(@button_draw_x,1,1)
 		@layout.add_widget(@x_to_draw,1,2)
 		@layout.add_widget(@button_copy,2,0,1,3)
+		@layout.add_widget(@button_email,3,0,1,3)
 		@layout.add_widget(gb_log,4,0,1,5)
 
 		@layout.setRowStretch(3,5)
@@ -90,6 +98,11 @@ class DrawTab < Qt::Widget
 		else
 			self.update_listofdraws()
 		end
+	end
+
+	def email
+		emailer = Emailer.new(@parent, @npc_name.current_text,@database,:event)
+		emailer.show
 	end
 
 	def update

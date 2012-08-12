@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'Qt'
+require_relative "gui_email"
 
 class RecordsTab < Qt::Widget
 	def initialize(parent, database)
@@ -26,7 +27,9 @@ class RecordsTab < Qt::Widget
 
 		@button_unspend = Qt::PushButton.new("Unspend",self)
 		@button_transfer = Qt::PushButton.new("Transfer",self)
+		@button_email = Qt::PushButton.new("Email Records",self)
 		@npc_spent_tags = Qt::ListWidget.new(self)
+
 
 		gb_owned_tags = Qt::GroupBox.new("Current Tags",self)
 		layout_owned_tags = Qt::VBoxLayout.new(gb_owned_tags)
@@ -55,6 +58,9 @@ class RecordsTab < Qt::Widget
 		@button_transfer.connect(SIGNAL(:clicked)) {
 			self.transfer
 		}
+		@button_email.connect(SIGNAL(:clicked)) {
+			self.email
+		}
 
 
 		#
@@ -73,6 +79,7 @@ class RecordsTab < Qt::Widget
 		@layout.add_widget(@button_unspend,2,2)
 		@layout.add_widget(@button_transfer,3,2)
 		@layout.add_widget(@npc_recipient,4,2)
+		@layout.add_widget(@button_email,5,2)
 		@layout.add_widget(gb_spent_tags, 1,3,5,2)
 		@layout.add_widget(gb_npc_log,6,0,1,5)
 
@@ -123,6 +130,11 @@ class RecordsTab < Qt::Widget
 		@database.transfer_nth_tag(npc_name, target_npc_name, @npc_owned_tags.current_row)
 		self.update_tags
 		@parent.update_others(:records)
+	end
+
+	def email
+		emailer = Emailer.new(@parent, npc_name,@database,:full_records)
+		emailer.show
 	end
 
 	# Local lookup functions:
