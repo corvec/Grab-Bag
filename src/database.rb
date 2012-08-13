@@ -63,6 +63,17 @@ class GrabBagDatabase
 			foreign_key :npc_name, :npcs, :key => :name, :type => :text
 			foreign_key :target_npc_name, :npcs, :key => :name, :type => :text
 		end
+		#@db.drop_table :email
+		@db.create_table? :email do
+			primary_key :email_id
+			String :name
+			String :address
+			Integer :smtp_port
+			String :smtp_host
+			String :smtp_domain
+			String :smtp_user
+			Boolean :save_password
+		end
 		puts "Tables are Initialized"
 	end
 
@@ -79,6 +90,10 @@ class GrabBagDatabase
 
 	def lookup_draw(draw_id)
 		@db[:bag][:id => draw_id][:draw]
+	end
+
+	def lookup_email_info
+		@db[:email].filter(:email_id => 0).first
 	end
 
 	# Returns the total number of tickets in the grab bag for the current event
@@ -183,6 +198,26 @@ class GrabBagDatabase
 		end
 		return text
 	end
+
+	#
+	#
+	# THESE ACTIONS MUTATE THE DATABASE AND ARE NOT LOGGED
+	#
+	#
+
+	def store_email_info name, address, smtp_host, smtp_port, smtp_domain, smtp_user, save_password
+		@db[:email].filter(:email_id => 0).delete
+		@db[:email].insert(:email_id => 0,
+						   :name => name,
+						   :address => address,
+						   :smtp_host => smtp_host,
+						   :smtp_port => smtp_port,
+						   :smtp_domain => smtp_domain,
+						   :smtp_user => smtp_user,
+						   :save_password => save_password)
+
+	end
+
 
 	
 	#
