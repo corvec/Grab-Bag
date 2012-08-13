@@ -10,12 +10,12 @@ class Emailer < Qt::Widget
 	# TODO: Store these in the database and load them here
 	@@db_init = false
 	@@save_password = false
-	@@name = 'NERO Indiana'
-	@@address = 'neroindiana@gmail.com'
-	@@smtp_host = 'smtp.gmail.com'
+	@@name = ''
+	@@address = ''
+	@@smtp_host = ''
 	@@smtp_port = 465
-	@@smtp_domain = 'gmail.com'
-	@@smtp_user = @@address
+	@@smtp_domain = ''
+	@@smtp_user = ''
 
 	def initialize(app, npc, database, type_of_email)
 		super(nil)
